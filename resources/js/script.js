@@ -53,6 +53,7 @@ $number.on('click', function() {
           {
             if(num1 != null) {
               more();
+              console.log("adding");
              $screen.append("+");
              operator = "+";
            };
@@ -63,6 +64,7 @@ $number.on('click', function() {
               {
                 if(num1 != null) {
                   more();
+                  console.log("subtracting");
                  $screen.append("-");
                  operator = "-";
                };
@@ -73,6 +75,7 @@ $number.on('click', function() {
                     {
                       if(num1 != null) {
                         more();
+                        console.log("multiplying");
                      $screen.append("x");
                      operator = "x";
                    };
@@ -83,6 +86,7 @@ $number.on('click', function() {
                         {
                           if(num1 != null) {
                           more();
+                          console.log("dividing");
                          $screen.append("/");
                          operator = "/";
                        };

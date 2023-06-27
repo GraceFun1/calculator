@@ -171,21 +171,22 @@ $("#equal").on('click', function()
    #calculator {
       display: flex;
       flex-direction: column;
-      width: 16rem;
+      width: 20rem;
       margin:auto;
     background-color: rgb(235, 185, 185);
     border: solid 5px rgb(180, 138, 138);
    }
    #screen {
-    background-color: rgb(255, 255, 255);
-    height: 4rem;
-    width: 90%;
-    margin: 10px auto;
-    font-size: 2rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    color: rgb(221, 150, 150);
+      background-color: rgb(255, 255, 255);
+      height: 50px;
+      width: 90%;
+      margin: 10px auto;
+      color: rgb(221, 150, 150);
+      font-size: 2rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      border: solid 2px whitesmoke;
    }
    #numbers {
     display: flex;
@@ -228,8 +229,8 @@ $("#equal").on('click', function()
    }
 
    #operators {
-    display: flex;
-    flex-wrap: wrap;
+      display: flex;
+      flex-wrap: wrap;
    }
 
    #buttons {
@@ -251,4 +252,4 @@ $("#equal").on('click', function()
 
    .button:active {
       box-shadow: 0px 0px;
-   } */
+   }*/
