@@ -1,0 +1,254 @@
+var currentNumber = 1;
+var num1;
+var num2;
+var click = 1;
+
+var $screen = $("#screen");
+var $number = $(".number");
+
+$("#equal").css('background', 'gray');
+$("#clear").css('background', 'gray');
+
+// when someone clicks on a number, it 
+//saves the number to do the math
+  $("#equal").css('background', 'gray');
+
+$number.on('click', function() {
+    if (click > 12) {
+        return;
+    }
+    click++;
+    var numberPressed = $(this).html();
+    $screen.append(numberPressed);
+    $("#clear").css('background', 'linear-gradient(to right, rgb(173, 125, 125), rgb(168, 76, 114))');
+
+    if (currentNumber == 1) {
+        if (num1 == null) {
+            num1 = numberPressed;
+        } else {
+            num1 = num1 + numberPressed;
+        }
+    }
+    if (currentNumber == 2) {
+        if (num2 == null) {
+            num2 = numberPressed;
+        } else {
+            num2 = num2 + numberPressed;
+        }
+        $("#equal").css('background', 'linear-gradient(to right, rgb(202, 139, 139), rgb(187, 83, 126))');
+    }
+});
+
+function more(){
+    if (click > 12){
+    }
+    if (currentNumber == 2) {
+      findAnswer();
+      $screen.empty();
+      $screen.append(num1);
+    }
+    currentNumber = 2;
+  }
+
+$("#plus").on('click', function()
+{
+    if(num1!=null) {
+        more();
+        $screen.append("+");
+        operator="+"
+        console.log("adding");
+    };
+    return;
+})
+
+$("#minus").on('click', function()
+{
+    if(num1!=null) {
+        more();
+        $screen.append("-");
+        operator="-"
+        console.log("subtracting");
+    };
+    return;
+})
+
+$("#times").on('click', function()
+{
+    if(num1!=null) {
+        more();
+        $screen.append("x");
+        operator="x"
+        console.log("multiply");
+    };
+    return;
+})
+
+$("#divide").on('click', function()
+{
+    if(num1!=null) {
+        more();
+        $screen.append("/");
+        operator="/"
+        console.log("dividing");
+    };
+    return;
+})
+
+$("#clear").on('click', function()
+{
+    $screen.empty();
+    num1 = null;
+    num2 = null;
+    currentNumber = 1;
+    click = 0;
+    $("#clear").css('background', 'gray');
+    $("#equal").css('background', 'gray');
+})
+
+function findAnswer() {
+    num1 = parseFloat(num1);
+    num2 = parseFloat(num2); 
+if (operator =="+")
+ { answer = num1 + num2; } 
+if (operator =="-") 
+{ answer = num1 - num2; } 
+if (operator =="x") 
+{ answer = num1 * num2; } 
+if (operator =="/") 
+{ answer = num1 / num2; } 
+num1 = answer; 
+num2 = null; 
+currentNumber = 1;
+}
+
+$("#equal").on('click', function()
+{
+    var element = document.getElementById('equal');
+    var style = window.getComputedStyle(element);
+    var background = "background";
+    var buttonColor = element.style.background;
+    if(buttonColor == 'gray') {
+      return;
+    }  
+    $screen.append("=");
+    findAnswer();
+    console.log(answer);
+    a = answer;
+    answer = a.toFixed(1);
+    console.log(answer);
+    if (click > 8) {
+        $screen.empty();
+        var answerLength = answer.toString();
+        click = answerLength.length;
+        console.log(click);
+    }
+    $screen.append(answer);
+    $("#equal").css('background', 'gray');
+})
+
+/* body {
+   background: linear-gradient(to right, white, rgb(240, 209, 209));
+ }
+ h1 {
+    font-size: 5vw;
+    color:rgb(211, 114, 114);
+    font-weight: 600;
+    padding: 50px;
+    text-align: center;
+    padding-top: 40px;
+    margin-top: 40px;
+ }
+    .logo {
+    width: 10%;
+    margin: 50px;
+   }
+   img {
+    width: 100%;
+   }
+   h1 {
+    text-align: center;
+   }
+   #calculator {
+      display: flex;
+      flex-direction: column;
+      width: 16rem;
+      margin:auto;
+    background-color: rgb(235, 185, 185);
+    border: solid 5px rgb(180, 138, 138);
+   }
+   #screen {
+    background-color: rgb(255, 255, 255);
+    height: 4rem;
+    width: 90%;
+    margin: 10px auto;
+    font-size: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: rgb(221, 150, 150);
+   }
+   #numbers {
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+   }
+   .number {
+    background: linear-gradient(to right, rgb(221, 150, 150), rgb(212, 88, 140));
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+   }
+   .operator {
+    background: linear-gradient(to right, rgb(202, 139, 139), rgb(187, 83, 126));
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #ffffff;
+   }
+
+   .clear {
+    background: linear-gradient(to right, rgb(173, 125, 125), rgb(168, 76, 114));
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #ffffff;
+   }
+
+   #operators {
+    display: flex;
+    flex-wrap: wrap;
+   }
+
+   #buttons {
+      display: flex;
+      cursor: pointer;
+   }
+
+   .button {
+      width: 3rem;
+      height: 3rem;
+      margin: .5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      font-weight: bold;
+      box-shadow: 3px 3px #888888;
+   }
+
+   .button:active {
+      box-shadow: 0px 0px;
+   } */

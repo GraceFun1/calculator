@@ -1,15 +1,20 @@
- body {
-   background: linear-gradient(to right, white, rgb(240, 209, 209));
+body {
+   background: linear-gradient(to right, white, rgb(201, 236, 226));
  }
  h1 {
-    font-size: 5vw;
-    color:rgb(211, 114, 114);
+    font-size: 5rem;
+    color:rgb(85, 226, 184);
     font-weight: 600;
     padding: 50px;
     text-align: center;
     padding-top: 40px;
     margin-top: 40px;
  }
+
+ .u {
+   font-size: 2rem;
+ } 
+
     .logo {
     width: 10%;
     margin: 50px;
@@ -21,35 +26,35 @@
     text-align: center;
    }
    #calculator {
-    display: flex;
-    flex-direction: column;
-    width: 280px;
-    height: 350px;
-    margin:auto;
-    background-color: rgb(235, 185, 185);
-    border: solid 5px rgb(180, 138, 138);
+      display: flex;
+      flex-direction: column;
+      width: 20rem;
+      margin:auto;
+    background-color: rgb(181, 230, 215);
+    border: solid 5px rgb(118, 168, 153);
+    justify-content: center;
    }
    #screen {
-    background-color: rgb(255, 255, 255);
-    height: 50px;
-    width: 90%;
-    margin: 10px auto;
-    color: rgb(221, 150, 150);
-    font-size: 2rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    border: solid 2px whitesmoke;
+      background-color: rgb(255, 255, 255);
+      height: 50px;
+      width: 90%;
+      margin: 10px auto;
+      color: rgb(221, 150, 150);
+      font-size: 2rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      border: solid 2px whitesmoke;
    }
    #numbers {
     display: flex;
     flex-wrap: wrap;
    }
    .number {
-    background: linear-gradient(to right, rgb(221, 150, 150), rgb(212, 88, 140));
+    background: linear-gradient(to right, rgb(150, 221, 200), rgb(115, 204, 177));
+    margin: 4px;
     width: 60px;
     height: 60px;
-    margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,11 +62,18 @@
     box-shadow: 3px 3px #6d6c6c;
     color: white;
    }
-   .operator {
-    background: linear-gradient(to right, rgb(202, 139, 139), rgb(187, 83, 126));
+
+   #equal {
+      margin: 4px;
     width: 60px;
     height: 60px;
-    margin: 5px;
+   }
+   
+   .operator {
+    background: linear-gradient(to right, rgb(105, 209, 178), rgb(70, 189, 153));
+    margin: 4px;
+    width: 50px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,11 +85,10 @@
     box-shadow: 0px 0px;
    }
 
-   .clear-number {
-    background: linear-gradient(to right, rgb(173, 125, 125), rgb(168, 76, 114));
-    width: 60px;
-    height: 60px;
-    margin: 5px;
+   .clear {
+    background: linear-gradient(to right, rgb(62, 185, 148), rgb(41, 170, 131));
+    width: 50px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,4 +113,18 @@
    #buttons {
       display: flex;
       cursor: pointer;
+   }
+
+   .button {
+      display: flex;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 4px;
+   }
+
+   p {
+      text-align: center;
+      color: rgb(130, 187, 170);
+
    }
