@@ -39,7 +39,7 @@ body {
       height: 50px;
       width: 90%;
       margin: 10px auto;
-      color: rgb(221, 150, 150);
+      color: rgb(110, 128, 148);
       font-size: 2rem;
       display: flex;
       justify-content: flex-end;
@@ -67,6 +67,7 @@ body {
       margin: 4px;
     width: 60px;
     height: 60px;
+    background: linear-gradient(to right, rgb(105, 209, 178), rgb(70, 189, 153));
    }
    
    .operator {

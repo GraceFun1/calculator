@@ -14,7 +14,7 @@ $("#clear").css('background', 'gray');
 //saves the number to do the math
 $number.on('click', function() {
       click++;
-    if (click > 12){
+    if (click > 90){
       return;
     }
     var numberPressed = $(this).html();
